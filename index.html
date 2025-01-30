@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Page with Sections</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const folderPath = 'resources/homePage/gallery/';
+  const images = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    'image4.jpg',
+    'image5.jpg',
+    'image6.jpg'
+  ].map(filename => folderPath + filename);
+
+    let currentIndex = 0; // Index of the first image to display
+    const imagesToShow = 3; // Number of images to show at a time
+    const gallery = document.getElementById('imageGallery'); // Reference to the gallery container
+
+    /**
+     * Function to update the gallery with the current set of images
+     */
+    function updateGallery() {
+      gallery.innerHTML = ''; // Clear the gallery content
+      for (let i = 0; i < imagesToShow; i++) {
+        // Calculate the index of the image to display (wrap around using modulo)
+        const imgIndex = (currentIndex + i) % images.length;
+
+        // Create an <img> element for the image
+        const img = document.createElement('img');
+        img.src = images[imgIndex]; // Set the image source
+        img.alt = `Image ${imgIndex + 1}`; // Set an accessible alt text
+        img.style.width = "30%"; // Set width to fit layout
+        img.style.margin = "5px"; // Add some spacing between images
+        gallery.appendChild(img); // Add the image to the gallery
+      }
+    }
+
+    /**
+     * Event listener for the "Previous" button
+     */
+    document.getElementById('prevButton').addEventListener('click', () => {
+      currentIndex = (currentIndex - imagesToShow + images.length) % images.length;
+      updateGallery();
+    });
+
+
+
+    /**
+     * Event listener for the "Next" button
+     */
+    document.getElementById('nextButton').addEventListener('click', () => {
+      currentIndex = (currentIndex + imagesToShow) % images.length;
+      updateGallery();
+    });
+
+    // Initialize the gallery with the first set of images
+    updateGallery();
+  });
+</script>
+
+
+
+</head>
+<body>
+     <div class="top-section">
+   	  <a href="resume.html">My resume</a>
+  	  <a href="techSupport.html">Tech Support</a>
+  	  <a href="musicTech.html">Audio Tech</a>
+    </div>
+
+    <div class="main-container">
+        <div class="left-section">
+            <a href="#section1">About</a>
+            <a href="#section-contact">Contacts</a>
+            <a href="#section2">Credentials</a>
+            <a href="#section-gallery">Gallery</a>
+        </div>
+
+        <div class="content-section">
+            <h1>Welcome to abirdseyeview.net</h1>
+            <p>Offering solutions for a tech savvy home.</p>
+
+            <!-- section 1 -->
+
+            <h2 id="section1"> </h2>
+            <div class="section1-content">
+              <div class="section1-left">
+                <img src="resources/homePage/logo.png" alt="Image for Section 1" />
+              </div>
+              <div class="section1-right">
+                <p>Hello, I am Mark Mawson, owner of abirdseyeview.net.</p>
+                <p>I am passionate about technology and enjoy solving problems and helping others.</p>
+                  <ul>
+                    <li>I can help you plan a network optimized for your home</li>
+                    <li>How about optimizing, upgrading or repairing your computer</li>
+                    <li>Does your home wiring need updating?</li>
+                    <li>Do your need help setting up a music recording space?</li>
+                  </ul>
+                  <p>Visit the links above for more information</p>
+                  <p>Email me or leave me a message. I will reply to gather more info and provide you an action plan. </p>
+              </div>
+             </div>
+
+
+            <!-- Section contacts-->
+            
+            <h2 id="section-contact">Contacts</h2>
+            <div class="section-contact">             
+              <a href="tel:+14049529110">404-952-9110</a>
+              <a href="sms:+14049529110">Send Text </a>
+              <a href="mailto:abirdseyeview.net">audio@abirdseyeview.net</a>
+          </div>
+
+            <!-- Section 2-->
+            
+            <h2 id="section2">Credentials</h2>
+              <ul>
+                <li>CompTIA Network+, February 2025</li>
+                <li>NCTI Master Tech, December 2018</li>
+                <li>CompTIA A+, March 2017</li>
+                <li>Associate of Science in General Studies, Georgia State Univeristy, June 2016</li>
+              </ul>
+          
+
+            <!-- Section gallery -->
+
+            <h2 id="section-gallery">Gallery</h2>
+            <p>   </p>
+
+	    	<div class="gallery" id="imageGallery">
+    		    <!-- Images will be dynamically injected here by JavaScript -->
+   		</div> <!-- End content section-->
+   		 <!-- Controls for navigating the images -->
+   		<div class="controls">
+      		 <button id="prevButton">Previous</button> <!-- Button to go to the previous set of images -->
+     		  
+     		   <button id="nextButton">Next</button> <!-- Button to go to the next set of images -->
+   		</div>
+
+
+        </div>   
+    </div>
+</body>
+</html>

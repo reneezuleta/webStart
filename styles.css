@@ -1,0 +1,295 @@
+/* defines */
+/* for color will use RGB 000000 is black ffffff is white */
+
+:root {
+    --darkest-bgColor: black; /* Sets darkest background color to black */
+    --dark-color: #011a3f; /* Variable for dark blue color */
+    --medium-color: #025992; /* Variable for dark gray color */
+    --light-color: hsl(193, 73%, 80%); /* Variable for dark blue color */
+    --accent-color: #f799a8; /* Accent background color for specific sections */
+
+    --text-color: var(--light-color); /* Sets default text color to light green */
+    --blend-bgColor: var(--dark-color); /* Blend background color for subtle contrasts */
+}
+   
+  
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif; /* Sets default font to Arial */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    color: var(--text-color); /* Applies text color from variable */
+    background: var(--darkest-bgColor); /* Sets page background color */
+    height: 100vh; /* Makes the body fill the viewport height */
+    display: flex; /* Enables flexbox for child alignment */
+    flex-direction: column; /* Stacks children vertically */
+}
+
+/* Top section */
+.top-section {
+    background-color: var(--blend-bgColor); /* Sets background color to dark gray */
+    color: white; /* Sets text color to white */
+    padding: 15px; /* Adds padding inside the section */
+    text-align: center; /* Centers text horizontally */
+}
+
+.top-section a {
+    margin: 0 15px; /* Adds horizontal spacing between links */
+    font-size: 18px; /* Sets font size for links */
+    color: white; /* Sets link color to white */
+    transition: color 0.3s; /* Adds smooth transition for hover effect */
+}
+
+.top-section a:hover {
+    color: var(--accent-color);/* Changes link color on hover to orange */
+}
+
+/* Main container */
+.main-container {
+    display: flex; /* Aligns left and content sections side-by-side */
+    padding: 20px; /* Adds padding around the container */
+    justify-content: flex-start; /* Aligns children to the start */
+    align-items: stretch; /* Ensures children fill equal height */
+    height: calc(100vh - 60px); /* Adjusts height based on top section height */
+    width: 100%; /* Fills full width */
+    box-sizing: border-box; /* Includes padding/border in size calculations */
+    overflow: hidden; /* Prevents content overflow */
+}
+
+/* Left section */
+.left-section {
+    width: 70px; /* Keeps the updated width */
+    background: var(--darkest-bgColor); 
+    color: white;
+    padding: 10px; /* Keeps reduced padding */
+    margin-top: 0; /* Removes top margin for vertical centering */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers items vertically */
+    align-items: center; /* Centers items horizontally */
+    gap: 15px; /* Adds spacing between links */
+    height: 100%; /* Keeps the full height */
+    position: sticky;
+    top: 0; /* Keeps sticky functionality */
+}
+
+.left-section a {
+    display: block; /* Makes links behave like block elements */
+    margin: 10px 0; /* Adds vertical spacing between links */
+    color: white; /* Sets link text color to light green */
+    font-size: 16px; /* Sets font size for links */
+    text-decoration: none; /* Removes underline from links */
+    text-align: center; /* Centers text inside links */
+}
+
+.left-section a:hover {
+    color: var(--accent-color); /* Changes link color on hover*/
+}
+
+/* Content section */
+.content-section {
+    flex-grow: 1; /* Makes content section fill remaining space */
+    background-color: var(--darkest-bgColor); /* Sets background to black */
+    padding: 20px; /* Adds padding inside the section */
+    border-radius: 5px; /* Rounds corners slightly */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Adds subtle white glow effect */
+    height: 100%; /* Makes section fill full height */
+    overflow-y: auto; /* Enables vertical scrolling if content exceeds height */
+}
+
+
+/* Styles for Section 1 content */
+.section1-content {
+    display: flex; /* Aligns content side-by-side */
+    align-items: center; /* Vertically centers items */
+    justify-content: space-between; /* Adds space between items */
+    gap: 20px; /* Adds spacing between items */
+    margin-bottom: 20px; /* Adds bottom margin to the section */
+}
+
+.section1-left img {
+    max-width: 300px; /* Limits image width */
+    height: auto; /* Maintains image aspect ratio */
+    border-radius: 15px;
+}
+
+.section1-right {
+    max-width: 60%; /* Restricts width of the text container */
+}
+
+.section1-right ul {
+    padding-left: 20px; /* Indents list for better readability */
+}
+
+.section1-right ul li {
+    list-style-type: disc; /* Adds bullet points to list items */
+}
+
+
+.section-contact {
+    background: var(--darkest-bgColor); 
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left; /* Centers items vertically */
+    align-items: center; /* Centers items horizontally */
+    gap: 25px; /* Adds spacing between links */
+    border-bottom: 2px solid var(--medium-color);
+    padding-bottom: 10px;
+}
+
+.section-contact a {
+    display: block; /* Makes links behave like block elements */
+    color: white; /* Sets link text color to white */
+    font-size: 16px; /* Sets font size for links */
+    text-decoration: underline; /* Removes underline from links */
+    text-align: left; /* Centers text inside links */
+}
+
+.section-contact a:hover {
+    color: var(--accent-color); /* Changes link color on hover to orange */
+}
+
+
+/* Gallery styles */
+#imageGallery {
+    display: flex; /* Aligns gallery items side-by-side */
+    justify-content: space-around; /* Spaces items evenly */
+    align-items: center; /* Vertically aligns items */
+    flex-wrap: wrap; /* Allows items to wrap to new lines if needed */
+    margin: 20px 0; /* Adds vertical spacing around the gallery */
+}
+
+#imageGallery img {
+    max-width: 30%; /* Limits image width */
+    height: auto; /* Maintains image aspect ratio */
+    border: 3px solid #ddd; /* Adds light border around images */
+    border-radius: 5px; /* Rounds image corners slightly */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Adds shadow around images */
+}
+
+.controls {
+    text-align: center; /* Centers the buttons */
+    margin-top: 10px; /* Adds space above buttons */
+}
+
+.controls button {
+    padding: 10px 20px; /* Adds padding inside buttons */
+    font-size: 16px; /* Sets font size for buttons */
+    cursor: pointer; /* Displays pointer cursor on hover */
+    border: none; /* Removes button borders */
+    background-color: var(--blend-bgColor);/* Sets button background to blue */
+    color: white; /* Sets button text color to white */
+    border-radius: 5px; /* Rounds button corners */
+    margin: 5px; /* Adds spacing between buttons */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.controls button:hover {
+    background-color: #0056b3; /* Changes button color on hover */
+}
+
+/* Common button styles */
+.button-common {
+    padding: 10px 20px; /* Adds padding to buttons */
+    font-size: 16px; /* Sets button text size */
+    cursor: pointer; /* Displays pointer cursor */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds corners */
+    margin: 5px; /* Adds spacing between buttons */
+}
+
+/* Specific button colors */
+.button-green {
+    background-color: var(--medium-color); /* Sets background color to light green */
+    color: white; /* Sets text color to dark blue */
+}
+
+.button-green:hover {
+    background-color: limegreen; /* Brightens background color on hover */
+}
+
+.button-orange {
+    background-color: #f0a500; /* Sets background color to orange */
+    color: white; /* Sets text color to white */
+}
+
+.button-orange:hover {
+    background-color: #d48800; /* Darkens background color on hover */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+content-section a {
+    color:white;
+}
+
+content-section a:hover {
+    color: var(--accent-color); /* Changes link color on hover */
+}
+
+
+table th, table td {
+    border: 1px solid var(--accent-color);
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--dark-color);
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color:var(--darkest-color);
+}
+
+table tr:hover {
+    background-color: var(--medium-color);
+}
+
+table a {
+    color:white;
+}
+
+table a:hover {
+    color: var(--accent-color); /* Changes link color on hover */
+}
+
+/* Chrome, Edge, and Safari scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-color); /* Background color of the scrollbar track */
+    border-radius: 10px; /* Rounds the corners of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-color); /* Thumb color */
+    border-radius: 10px; /* Rounds the corners of the thumb */
+    border: 2px solid var(--dark-color); /* Adds a border to match the track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color); /* when hovering over the thumb */
+}
+
+/* Firefox scrollbar styles */
+/*
+scrollbar-color:-var(--light-green) var(--dark-color);/* Thumb color, then track color */
+/*scrollbar-width: thin;/* Options: 'auto', 'thin', or 'none' */
+
+
+

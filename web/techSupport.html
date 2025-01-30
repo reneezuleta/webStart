@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Page with Sections</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const folderPath = 'resources/techSupport/gallery/';
+  const images = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    'image4.jpg',
+    'image5.jpg',
+    'image6.jpg'
+  ].map(filename => folderPath + filename);
+
+    let currentIndex = 0; // Index of the first image to display
+    const imagesToShow = 3; // Number of images to show at a time
+    const gallery = document.getElementById('imageGallery'); // Reference to the gallery container
+
+    /**
+     * Function to update the gallery with the current set of images
+     */
+    function updateGallery() {
+      gallery.innerHTML = ''; // Clear the gallery content
+      for (let i = 0; i < imagesToShow; i++) {
+        // Calculate the index of the image to display (wrap around using modulo)
+        const imgIndex = (currentIndex + i) % images.length;
+
+        // Create an <img> element for the image
+        const img = document.createElement('img');
+        img.src = images[imgIndex]; // Set the image source
+        img.alt = `Image ${imgIndex + 1}`; // Set an accessible alt text
+        img.style.width = "30%"; // Set width to fit layout
+        img.style.margin = "5px"; // Add some spacing between images
+        gallery.appendChild(img); // Add the image to the gallery
+      }
+    }
+
+    /**
+     * Event listener for the "Previous" button
+     */
+    document.getElementById('prevButton').addEventListener('click', () => {
+      currentIndex = (currentIndex - imagesToShow + images.length) % images.length;
+      updateGallery();
+    });
+
+
+
+    /**
+     * Event listener for the "Next" button
+     */
+    document.getElementById('nextButton').addEventListener('click', () => {
+      currentIndex = (currentIndex + imagesToShow) % images.length;
+      updateGallery();
+    });
+
+    // Initialize the gallery with the first set of images
+    updateGallery();
+  });
+</script>
+
+
+
+</head>
+<body>
+     <div class="top-section">
+      <a href="index.html">Home</a>
+   	  <a href="resume.html">My resume</a>
+  	  <a href="musicTech.html">Audio Tech</a>
+    </div>
+
+    <div class="main-container">
+        <div class="left-section">
+            <a href="#section1">About</a>
+            <a href="#section-contact">Contacts</a>
+            <a href="#section2">Computers</a>
+            <a href="#section3">Networks</a>
+            <a href="#section4">Tutoring</a> 
+            <a href="#section5">Credentials</a>
+            <a href="#section-gallery">Gallery</a>
+
+            
+        </div>
+
+        <div class="content-section">
+            <h1>Welcome to Technical Support</h1>
+            <p>Helpdesk services for your personal or business needs.</p>
+
+            <!-- section 1 -->
+
+            <h2 id="section1"> </h2>
+            <div class="section1-content">
+              <div class="section1-left">
+                <img src="resources/techSupport/techLogo.jpeg" alt="Image for Section 1" />
+              </div>
+              <div class="section1-right">
+                <p>In person support in the Sugar Hill, Buford and Suwanee area.</p>
+                <p>Online support via teamviewer.</p>
+                <p>I am in the business of computer use tutoring, computer repairs and network servicing.</p>
+                  <ul>
+                    <li>I can tutor you into how to keep your system safe and efficient.</li>
+                    <li>I can repair and or upgrade your current set up.</li>
+                    <li>Based on your needs I can advice you on what system works best for you</li>
+                    <li>Coaching at all levels.</li>
+                  </ul>
+              </div>
+             </div>
+
+              <!-- Section contacts-->
+            
+            <h2 id="section-contact">Contacts</h2>
+            <div class="section-contact">             
+                <a href="tel:+14049529110">404-542-4395</a>
+                <a href="sms:+14049529110">Send Text </a>
+                <a href="mailto:audio@abirdseyeview.net">audio@abirdseyeview.net</a>
+            </div>
+
+            <!-- Section 2 -->
+            
+            <h2 id="section2">Computer Repair Services</h2>
+            <section id="Computer">
+              <h3 class="section-title">Skills and estimated cost:</h3>
+              <p>Many services can be performed remotely</p>
+              <p>The following list is just a sample, I am open to any request you may have</p>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Activity</th>
+                          <th>Labor Cost</th>
+                          <th>Guidelines</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Build custon computer for gaming, business, or developemnt</td>
+                          <td>$200 plus parts</td>
+                          <td>no</td>
+                      </tr>
+
+                      <tr>
+                        <td>Memory upgrade</td>
+                        <td>$100</td>
+                        <td>no</td>
+                      </tr>
+
+                      <tr>
+                        <td>Internal hardrive replacement or upgrade </td>
+                        <td>$100 plus parts</td>
+                        <td> How not to loose you data</td>
+                      </tr>
+                      <tr>
+                        <td>Adding external memory</td>
+                        <td>$100 plus parts</td>
+                        <td>tbd</td>
+                      </tr>
+                      <tr>
+                          <td>Printer Installation</td>
+                          <td>$75 plus parts</td>
+                          <td>tbd</td>
+                      </tr>
+
+                      <tr>
+                        <td>Virus and malware removal</td>
+                        <td>$75</td>
+                        <td>tbd</td>
+                    </tr>
+                      <tr>
+                          <td>Software Troubleshooting</td>
+                          <td>$120</td>
+                          <td>tbd</td>
+                      </tr>
+                      <tr>
+                        <td>Virtualization Setup</td>
+                        <td>$120</td>
+                        <td>tbd</td>
+                    </tr>
+
+                  </tbody>
+              </table>
+          </section>
+
+
+          <!-- Section 3 -->
+            
+          <h2 id="section3">Network and Security Services</h2>
+          <section id="Network">
+            <h3 class="section-title">Skills and estimated cost:</h3>
+            <p>Give me a list of requirements and I will prepare a proposal </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Labor Cost</th>
+                        <th>Guidelines</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Network Setup</td>
+                        <td>$100</td>
+                        <td>A basic expalanation s you can maintain it yourself</td>
+                    </tr>
+                    <tr>
+                        <td>Insuring Network Security</td>
+                        <td>$75</td>
+                        <td>Best practices to keep your system safe</td>
+                    </tr>
+                    <tr>
+                      <td>VPN setup</td>
+                      <td>$75</td>
+                      <td>TBD</td>
+                  </tr>
+                    <tr>
+                        <td>Parental Control</td>
+                        <td>$100</td>
+                        <td><a href="resources/techSupport/pdfs/parentalControl.pdf"
+                                     target="_blank">Guidelines</a></td>
+                    </tr>
+                 </tbody>
+            </table>
+        </section>
+
+          <h2 id="section4">Tutoring Services</h2>
+          <section id="Tutoring">
+            <h3 class="section-title">Tutoring available in person or via video call</h3>
+            <ul>
+              <li> Teaching computer use at all levels, from basic use to advance skills </li>
+              <li> Storing in the cloud</li>
+
+              <li> Best cybersecurity practices to keep your system safe</li>
+              <li> Best practices to keep your chidren safe when online </li>
+              <li> How to leverage Chatgpt, Geminy </li>
+              <li> I can also teach you how to set up your smart home using Alexa, Google or your prefereed assistant</li>
+            </ul>
+            
+
+
+            <!-- Section 5 -->
+            
+            <h2 id="section5">Credentials</h2>
+
+              <ul>
+                <li>CompTIA Network+, February 2025</li>
+                <li>NCTI Master Tech, December 2018</li>
+                <li>CompTIA A+, March 2017</li>
+                <li>Associate of Science in General Studies, Georgia State Univeristy, June 2016</li>
+              </ul>
+
+            
+            <!-- Section gallery -->
+
+            <h2 id="section-gallery">Gallery</h2>
+            <p>   </p>
+
+	    	<div class="gallery" id="imageGallery">
+    		    <!-- Images will be dynamically injected here by JavaScript -->
+   		</div>
+   		 <!-- Controls for navigating the images -->
+   		<div class="controls">
+      		 <button id="prevButton">Previous</button> <!-- Button to go to the previous set of images -->
+     		  
+     		   <button id="nextButton">Next</button> <!-- Button to go to the next set of images -->
+   		</div>
+
+
+        </div>   
+    </div>
+</body>
+</html>
