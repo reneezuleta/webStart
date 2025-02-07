@@ -7,6 +7,73 @@
             background-color: #121212;
             color: #ffffff;
         }
+
+
+/* Responsive text sizes for headings */
+h1 {
+    font-size: clamp(20px, 3vw, 40px); /* Scales between 20px and 40px */
+}
+
+h2 {
+    font-size: clamp(18px, 2.5vw, 35px); /* Scales between 18px and 35px */
+}
+
+/* Responsive text sizes for links */
+.top-section a,
+.left-section a,
+.content-section a {
+    font-size: clamp(12px, 1.5vw, 20px); /* Ensures links scale properly */
+}
+
+/* Responsive text sizes for buttons */
+.button-common {
+    font-size: clamp(10px, 1.3vw, 18px); /* Ensures buttons scale properly */
+}
+
+/* Media queries for additional control on smaller screens */
+@media (max-width: 800px) {
+    body {
+        font-size: 16px; /* Adjusts font size for medium screens */
+    }
+    h1 {
+        font-size: 24px; /* Adjusts heading size */
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 14px; /* Adjusts font size for small screens */
+    }
+    h1 {
+        font-size: 20px; /* Adjusts heading size for smaller screens */
+    }
+ 
+}
+
+@media (max-width:500px){
+    section-title a {
+        margin: 0 5px; /* Adds horizontal spacing between links */
+        font-size: clamp(10px,3vw, 15px); /*scale text dinamically */
+     }
+ }
+
+ @media (max-width: 400px) {
+    body {
+        font-size: 10px; /* Adjusts font size for small screens */
+    }
+    h1 {
+        font-size: 12px; /* Adjusts heading size for smaller screens */
+    }
+ 
+}
+
+@media (max-width:400px){
+    section-title a {
+        margin: 0 5px; /* Adds horizontal spacing between links */
+        font-size: clamp(9px,1.5vw, 12px); /*scale text dinamically */
+     }
+ }
+
         nav {
             width: 20%;
             background-color: #1a1a1a;
@@ -38,7 +105,7 @@
             margin-top: 30px;
             margin-bottom: 10px;
             color: #4caf50;
-            font-size: 1.4em;
+            font-size: 1.1em;
             text-transform: uppercase;
             border-bottom: 2px solid #4caf50;
             padding-bottom: 5px;
